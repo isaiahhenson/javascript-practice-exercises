@@ -1,28 +1,21 @@
-let container = document.querySelector('#container')
-let btn = document.querySelectorAll('button')
+let link = document.querySelector('a') 
 
-let p = document.createElement('p')
-let h = document.createElement('h3')
-let bdDiv = document.createElement('div')
-let inDiv = document.createElement('h1')
-let p2 = document.createElement('p')
+link.textContent = "Modzilla Developer Network"
+link.href = "https://developer.mozilla.org";
 
-btn.forEach((button) => button.addEventListener('click', () => alert(button.id)))
+const sect = document.querySelector("section");
 
-p.textContent = 'Hey, I"m red!'
-p.style.cssText = "color: red"
-bdDiv.style.border = 'solid 2px black'
-bdDiv.style.height = '100px'
-bdDiv.style['background-color'] = 'pink'
-inDiv.textContent = "I'm in a Div"
-// inDiv.style['font-size'] = '17px'
-p2.textContent = 'ME TOO!'
+let para = document.createElement('p')
+para.textContent = "I had a great time today:)"
 
-h.innerHTML = 'Hey, I"m blue!'
-h.style['color'] = 'blue'
+sect.appendChild(para)
 
-container.appendChild(p)
-container.appendChild(h)
-container.appendChild(bdDiv)
-bdDiv.appendChild(inDiv)
-bdDiv.appendChild(p2)
+const text = document.createTextNode(" — the premier source for web development knowledge.")
+let linkPara = document.querySelector('p')
+linkPara.appendChild(text)
+sect.removeChild(linkPara);
+
+sect.appendChild(linkPara);
+
+linkPara.setAttribute('class', 'highlight')
+
