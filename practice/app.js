@@ -1,21 +1,30 @@
-let link = document.querySelector('a') 
+let input = document.querySelector('input')
+let ul = document.querySelector('ul')
+let button = document.querySelector('button')
 
-link.textContent = "Modzilla Developer Network"
-link.href = "https://developer.mozilla.org";
 
-const sect = document.querySelector("section");
+button.addEventListener('click', () => {
+    let val = input.value
+    console.log(val)
+    input.value = ""
+    
+    let span = document.createElement('span')
+    let li = document.createElement('li')
+    let btn = document.createElement('button')
 
-let para = document.createElement('p')
-para.textContent = "I had a great time today:)"
+    li.appendChild(span)
+    li.appendChild(btn)
 
-sect.appendChild(para)
+    span.textContent = val;
+    btn.textContent = 'DELETE'
 
-const text = document.createTextNode(" — the premier source for web development knowledge.")
-let linkPara = document.querySelector('p')
-linkPara.appendChild(text)
-sect.removeChild(linkPara);
+    ul.appendChild(li)
 
-sect.appendChild(linkPara);
+    btn.addEventListener('click', () => {ul.removeChild(li),  input.focus()})
 
-linkPara.setAttribute('class', 'highlight')
+    input.focus()
+})
+
+
+
 
