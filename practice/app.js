@@ -1,30 +1,31 @@
 let input = document.querySelector('input')
-let ul = document.querySelector('ul')
 let button = document.querySelector('button')
+let ul = document.querySelector('ul')
 
 
 button.addEventListener('click', () => {
-    let val = input.value
-    console.log(val)
-    input.value = ""
-    
-    let span = document.createElement('span')
-    let li = document.createElement('li')
-    let btn = document.createElement('button')
 
-    li.appendChild(span)
-    li.appendChild(btn)
+let val = input.value
+console.log(val)
+input.value = ""
+input.focus()
 
-    span.textContent = val;
-    btn.textContent = 'DELETE'
+let span = document.createElement('span')
+let button = document.createElement('button')
+let li = document.createElement('li')
 
-    ul.appendChild(li)
+span.textContent = val
+button.textContent = "DELETE"
 
-    btn.addEventListener('click', () => {ul.removeChild(li),  input.focus()})
+li.appendChild(span)
+li.appendChild(button)
 
+
+ul.appendChild(li)
+
+button.addEventListener('dblclick', () => {
+    li.remove()
     input.focus()
 })
-
-
-
+})
 
