@@ -1,31 +1,21 @@
-let input = document.querySelector('input')
-let button = document.querySelector('button')
+
+function tri(num){
+    let board = ''
+    for (let i = 1; i <= num; i++){
+        let spaces = ' '.repeat(num - i)
+        let hash = '#'.repeat(2 * i - 1)
+        board += spaces + hash + spaces + '\n'
+    }
+    return board
+}
+
+console.log(tri(5))
+
+let print = tri(5);
+
 let ul = document.querySelector('ul')
-
-
-button.addEventListener('click', () => {
-
-let val = input.value
-console.log(val)
-input.value = ""
-input.focus()
-
-let span = document.createElement('span')
-let button = document.createElement('button')
 let li = document.createElement('li')
-
-span.textContent = val
-button.textContent = "DELETE"
-
-li.appendChild(span)
-li.appendChild(button)
-
+li.textContent = print;
 
 ul.appendChild(li)
-
-button.addEventListener('dblclick', () => {
-    li.remove()
-    input.focus()
-})
-})
 
